@@ -1,0 +1,10 @@
+{
+  "name": "stream-read",
+  "description": "Read from a stream, callback style",
+  "version": "0.0.0",
+  "repository": "micnews/stream-read",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^3.0.0"
+  }
+}
