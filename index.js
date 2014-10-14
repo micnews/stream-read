@@ -11,6 +11,7 @@ function read1(stream, cb) {
   stream.on('data', ondata);
   stream.on('error', onerror);
   stream.on('end', onend);
+  stream.resume();
 
   function ondata(data) {
     stream.pause();
