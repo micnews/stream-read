@@ -6,5 +6,8 @@
   "license": "MIT",
   "devDependencies": {
     "tape": "^3.0.0"
+  },
+  "dependencies": {
+    "dezalgo": "^1.0.1"
   }
 }

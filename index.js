@@ -1,5 +1,7 @@
+var dz = require('dezalgo');
 
 module.exports = function read(stream, cb) {
+  cb = dz(cb);
   return typeof stream.read == 'function'
     ? read2(stream, cb)
     : read1(stream, cb);
