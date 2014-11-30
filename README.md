@@ -3,6 +3,8 @@
 
   Read from a stream, callback style.
 
+  [![build status](https://secure.travis-ci.org/micnews/stream-read.svg)](http://travis-ci.org/micnews/stream-read)
+
 ## Example
 
 ```js
