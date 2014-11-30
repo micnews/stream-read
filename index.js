@@ -69,7 +69,16 @@ function read2(stream, cb) {
   }
 
   function check() {
+    var errored = false;
+    var _onerror;
+    stream.on('error', _onerror = function(err){
+      errored = true;
+      stream.removeListener('error', _onerror);
+      cb(err);
+    });
+
     var buf = stream.read();
+    if (errored) return;
     if (buf) cb(null, buf);
     else listen();
   }
