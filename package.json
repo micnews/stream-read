@@ -5,9 +5,13 @@
   "repository": "micnews/stream-read",
   "license": "MIT",
   "devDependencies": {
-    "tape": "^3.0.0"
+    "tape": "^3.0.0",
+    "through": "~2.3.4"
   },
   "dependencies": {
     "dezalgo": "^1.0.1"
+  },
+  "scripts": {
+    "test": "make test"
   }
 }
