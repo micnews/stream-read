@@ -159,3 +159,13 @@ test('pull error', function(t){
   });
 });
 
+test('pull double end', function(t){
+  t.plan(1);
+  var stream = Readable();
+  stream._read = function(){ this.push(null) };
+  read(stream, function(err, val){
+    t.equal(val, null);
+  });
+  stream.emit('end');
+});
+

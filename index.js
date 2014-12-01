@@ -40,6 +40,7 @@ function read1(stream, cb) {
 
 function read2(stream, cb) {
   if (!stream.readable) return cb();
+  var ended = false;
 
   function onreadable() {
     cleanup();
@@ -48,7 +49,10 @@ function read2(stream, cb) {
 
   function onend() {
     cleanup();
-    cb(null, null);
+    if (!ended) {
+      ended = true;
+      cb(null, null);
+    }
   }
 
   function onerror(err) {
