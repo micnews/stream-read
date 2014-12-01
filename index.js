@@ -82,6 +82,7 @@ function read2(stream, cb) {
     });
 
     var buf = stream.read();
+    stream.removeListener('error', _onerror);
     if (errored) return;
     if (buf) cb(null, buf);
     else listen();
