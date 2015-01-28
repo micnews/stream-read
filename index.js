@@ -8,7 +8,7 @@ module.exports = function read(stream, cb) {
 };
 
 function read1(stream, cb) {
-  if (!stream.readable) return cb();
+  if (!stream.readable) return cb(null, null);
 
   stream.on('data', ondata);
   stream.on('error', onerror);
@@ -39,7 +39,7 @@ function read1(stream, cb) {
 }
 
 function read2(stream, cb) {
-  if (!stream.readable) return cb();
+  if (!stream.readable) return cb(null, null);
   var ended = false;
 
   function onreadable() {
